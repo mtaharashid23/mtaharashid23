@@ -1,4 +1,4 @@
-# Place this file at: .github/workflows/snake.yml  (in the mtaharashid23/mtaharashid23 repo)
+# Path: .github/workflows/snake.yml  (repo: mtaharashid23/mtaharashid23)
 name: Generate Snake Animation
 
 on:
@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Generate snake animation
+      - name: Generate snake animation (monochrome, matches portfolio)
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/snake.svg?palette=github-light
-            dist/snake-dark.svg?palette=github-dark
+            dist/snake.svg?color_snake=#0C0C0D&color_dots=#EBEBE9,#C4C4C8,#8B8B90,#4A4A4F,#18181B
+            dist/snake-dark.svg?color_snake=#F4F4F2&color_dots=#161618,#2E2E32,#55555B,#8B8B90,#C4C4C8
 
       - name: Push snake output to "output" branch
         uses: crazy-max/ghaction-github-pages@v4
